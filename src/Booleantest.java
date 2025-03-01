@@ -1,20 +1,25 @@
 import java.util.Scanner;
 
 public class Booleantest {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
 
-        System.out.println("Please enter input A:");
-        boolean a = keyboard.nextBoolean();
-        System.out.println("Please enter input B:");
-        boolean b = keyboard.nextBoolean();
-        System.out.println("Please enter input C:");
-        boolean c = keyboard.nextBoolean();
-        System.out.println("Please enter input D:");
-        boolean d = keyboard.nextBoolean();
+        // Prompting user for input
+        System.out.print("Enter boolean value for A: ");
+        boolean A = keyboard.nextBoolean();
+        System.out.print("Enter boolean value for B: ");
+        boolean B = keyboard.nextBoolean();
+        System.out.print("Enter boolean value for C: ");
+        boolean C = keyboard.nextBoolean();
+        System.out.print("Enter boolean value for D: ");
+        boolean D = keyboard.nextBoolean();
+
         keyboard.close();
 
-        boolean result = a && b || c && d || a && c || a && d || b && d || b && c;
-        System.out.println("The output is: " + result);
+        // Boolean logic implementation
+        boolean a = (!B && D) || (!B && !C && D) || (!A && B && C) || (A && C && D);
+
+        // Print output directly
+        System.out.println("Output a: " + a);
     }
 }
