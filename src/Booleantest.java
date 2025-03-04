@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Booleantest {
+
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
 
@@ -15,11 +16,8 @@ public class Booleantest {
         boolean D = keyboard.nextBoolean();
 
         keyboard.close();
-
-        
         boolean a = (!B && D) || (!B && !C && D) || (!A && B && C) || (A && C && D);
-
-        // Print output directly
         System.out.println("Value a: " + a);
+        
     }
 }
