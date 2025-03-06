@@ -26,7 +26,7 @@ public class AmbiguousCase {
             }
             // true if angle is obtuse
         } else if (angleA > 90) {
-            if (a < b | a == h) {
+            if (a < b | a == b) {
                 System.out.println("No triangle found");
             } else if (a > b) {
                 System.out.println("1 triangle found");
