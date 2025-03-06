@@ -10,7 +10,6 @@ public class Newtonsmethod {
             // calculation
             double r = x - (6 * x * x * x * x - 13 * x * x * x - 18 * x * x + 7 * x + 6)
                     / (24 * x * x * x - 39 * x * x - 36 * x + 7);
-
             System.out.println("The root value is:" + r);
             System.out.println("do you wish to try again? [y/n]");
             if (keyboard.next().charAt(0) == 'n') {
@@ -21,3 +20,4 @@ public class Newtonsmethod {
     }
 }
 // End when a root is found (-1, -1/2, 2/3, 3)
+// rep link "https://github.com/sarve3sh/Acs.git"

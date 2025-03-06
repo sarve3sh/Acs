@@ -18,6 +18,6 @@ public class Booleantest {
         keyboard.close();
         boolean a = (!B && D) || (!B && !C && D) || (!A && B && C) || (A && C && D);
         System.out.println("Value a: " + a);
-        
+
     }
 }
