@@ -7,17 +7,17 @@ public class Booleantest {
 
         // Prompting user for input
         System.out.print("Enter boolean value for A: ");
-        boolean A = keyboard.nextBoolean();
+        boolean a = keyboard.nextBoolean();
         System.out.print("Enter boolean value for B: ");
-        boolean B = keyboard.nextBoolean();
+        boolean b = keyboard.nextBoolean();
         System.out.print("Enter boolean value for C: ");
-        boolean C = keyboard.nextBoolean();
+        boolean c = keyboard.nextBoolean();
         System.out.print("Enter boolean value for D: ");
-        boolean D = keyboard.nextBoolean();
+        boolean d = keyboard.nextBoolean();
 
         keyboard.close();
-        boolean a = (B && !D) || (!B && !C && D) || (!A && !B && !C) || (A && C && !D);
-        System.out.println("Value a: " + a);
+        boolean result = a && !d || !b && !c && d || !a && !b && !c || a && c && !d;
+        System.out.println("Value a: " + result);
 
     }
 }
