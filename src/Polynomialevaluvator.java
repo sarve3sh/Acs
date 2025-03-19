@@ -27,6 +27,6 @@ public class Polynomialevaluvator {
         }
 
         System.out.println("Your polynomial function is: " + function);
-        System.out.println("Your polynomial at x = " + x + " is: " + "f(" + x +") = " + sum);
+        System.out.println("Your polynomial at x = " + x + " is: " + "f(" + x +") = "+sum);
     }
 }
