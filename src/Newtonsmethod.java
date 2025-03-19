@@ -39,11 +39,13 @@ public class Newtonsmethod {
                 }
             }
             System.out.println("The root value is:" + r);
-            System.out.println("do you wish to try again? [y/n]");
-            if (keyboard.next().charAt(0) == 'n') {
+            if (r==-1|r==3|r==-0.5|r==(2/3)) {
+                break;
+            }System.out.println("do you wish to try again? [y/n]");
+             if (keyboard.next().charAt(0) == 'n') {
                 keyboard.close();
                 break;
             }
-        }
+          }
     }
 }
