@@ -13,6 +13,7 @@ public class Polynomialevaluvator {
         String x = keyboard.nextLine();
         
         keyboard.close();
+        System.out.println("The answer for the respective polynomial and x value":+answer);
 
       
 
