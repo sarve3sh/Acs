@@ -7,7 +7,7 @@ public class Newtonsmethod {
         // Tolerance for checking if we've found an exact root
         double rootTolerance = 0.0000001;
         while (true) {
-            System.out.println("Please enter an intitial root guess");
+            System.out.println("Please enter an initial root guess");
             double x = keyboard.nextDouble();
             double r = x;
             boolean rootFound = false;
@@ -39,13 +39,14 @@ public class Newtonsmethod {
                 }
             }
             System.out.println("The root value is:" + r);
-            if (r==-1|r==3|r==-0.5|r==(2/3)) {
+            if (r == -1 | r == 3 | r == -0.5 | r == (2 / 3)) {
                 break;
-            }System.out.println("do you wish to try again? [y/n]");
-             if (keyboard.next().charAt(0) == 'n') {
+            }
+            System.out.println("do you wish to try again? [y/n]");
+            if (keyboard.next().charAt(0) == 'n') {
                 keyboard.close();
                 break;
             }
-          }
+        }
     }
 }
