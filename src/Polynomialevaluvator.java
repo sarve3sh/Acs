@@ -7,26 +7,16 @@ public class Polynomialevaluvator {
         String function = "f(x) = ";
         double sum = 0.0;
         
-        System.out.println("Please enter coefficients:");
-        String coefficients = keyboard.nextLine();
-        System.out.println("Please enter exponents:");
-        String exponents = keyboard.nextLine();
-        System.out.println("Please enter an x value:");
-        double x = keyboard.nextDouble();
+        System.out.println("Please enter a polynomial in the form of 'f(x)=3x^3-5x^2+1x^4+9x^6+3.1x^1+2':");
+        String polynomial = keyboard.nextLine();
+        System.out.println("Please enter x value:");
+        String x = keyboard.nextLine();
+        
         keyboard.close();
+        System.out.println("The answer for the respective polynomial and x value":+answer);
 
-        StringTokenizer coeffSt = new StringTokenizer(coefficients);
-        StringTokenizer expSt = new StringTokenizer(exponents);
+      
 
-        while (coeffSt.hasMoreTokens()) {
-            double coefficient = Double.parseDouble(coeffSt.nextToken());
-            int exponent = Integer.parseInt(expSt.nextToken());
-
-            function += coefficient + "x^" + exponent + " ";
-            sum += coefficient * Math.pow(x, exponent);
-        }
-
-        System.out.println("Your polynomial function is: " + function);
-        System.out.println("Your polynomial at x = " + x + " is: " + "f(" + x +") = "+sum);
+       
     }
 }
