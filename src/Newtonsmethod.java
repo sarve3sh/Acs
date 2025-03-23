@@ -4,7 +4,7 @@ public class Newtonsmethod {
     public static void main(String[] args) throws Exception {
         Scanner keyboard = new Scanner(System.in);
 
-        // Tolerance for checking if we've found an exact root
+      
         double rootTolerance = 0.0000001;
         while (true) {
             System.out.println("Please enter an intitial root guess");
