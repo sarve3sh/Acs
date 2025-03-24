@@ -3,20 +3,26 @@ import java.util.StringTokenizer;
 
 public class Polynomialevaluvator {
     public static void main(String[] args) throws Exception {
-        Scanner keyboard = new Scanner(System.in);
-        String function = "f(x) = ";
+        Scanner input = new Scanner(System.in);
         double sum = 0.0;
-        
-        System.out.println("Please enter a polynomial in the form of 'f(x)=3x^3-5x^2+1x^4+9x^6+3.1x^1+2':");
-        String polynomial = keyboard.nextLine();
-        System.out.println("Please enter x value:");
-        String x = keyboard.nextLine();
-        
-        keyboard.close();
-        System.out.println("The answer for the respective polynomial and x value":+answer);
-
-      
-
-       
+        //prompting for input
+        System.out.println("Please enter a polynomial in the form f(x) = 3x^3+4y^2-2x+1 ");
+        String polynomial = input.nextLine().substring(5);
+        System.out.println("Please enter an x value ");
+        double x = input.nextDouble();
+        input.close();
+        //solving for the sum
+        StringTokenizer st = new StringTokenizer(polynomial, " ");
+        while (st.hasMoreTokens()) {
+            String term = st.nextToken();
+            if (term.contains("x")) {
+                double coeff = Double.parseDouble(term.substring(0, term.indexOf('x')));
+                double exp = Double.parseDouble(term.substring(term.indexOf('^') + 1));
+                sum += coeff * Math.pow(x, exp);
+            } else {
+                sum += Double.parseDouble(term);
+            }
+        }
+        System.out.println("for the given f(" + x + ")= " + sum);
     }
 }
