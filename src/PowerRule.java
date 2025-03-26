@@ -9,15 +9,37 @@ public class PowerRule {
         System.out.println("Please enter the degrees of the polynomial (seperated by space):");
         String[] degrees = keyboard.nextLine().split(" ");
         keyboard.close();
-        // solving for derivative #1
-        for (int i = 0; i < coefficients.length; i++)
-            ;
-        double der = Double.parseDouble(degrees[0]) * Double.parseDouble(coefficients[0]);
-        // solving for derivative #2
-        double deriv = Double.parseDouble(degrees[1]) * Double.parseDouble(coefficients[1]);
-        // assuming the coefficients and degrees are the same length
-        System.out.println("The first derivative is:" + der);
-        System.out.println("The second derivative is:" + deriv);
 
+        int n = coefficients.length;
+        double[] newCoefficients = new double[n];
+        double[] newDegrees = new double[n];
+        double[] newDegrees2 = new double[n];
+        double[] newCoefficients2 = new double[n];
+        ;
+        for(int i = 0; i < n; i++) {
+            newCoefficients[i] = Double.parseDouble(coefficients[i]) * Double.parseDouble(degrees[i]);
+            newDegrees[i] = Double.parseDouble(degrees[i]) - 1;
+            
+            newCoefficients2[i] = newCoefficients[i] * newDegrees[i];
+            newDegrees2[i] = newDegrees[i] - 1;
+        }
+          String derivative1 = "f'(x) =";
+          for (int i = 0; i < n; i++) {
+              if (newDegrees[i] > 0) {
+                  derivative1 += (newCoefficients[i] > 0 && i > 0 ? " +" : " ") + newCoefficients[i] + "x^" + newDegrees[i];
+              } else if (newCoefficients[i] != 0) {
+                  derivative1 += (newCoefficients[i] > 0 && i > 0 ? " +" : " ") + newCoefficients[i];
+              }
+          }
+          String derivative2 = "f''(x) =";
+            for (int i = 0; i < n; i++) {
+                if (newDegrees2[i] > 0) {
+                    derivative2 += (newCoefficients2[i] > 0 && i > 0 ? " +" : " ") + newCoefficients2[i] + "x^" + newDegrees2[i];
+                } else if (newCoefficients2[i] != 0) {
+                    derivative2 += (newCoefficients2[i] > 0 && i > 0 ? " +" : " ") + newCoefficients2[i];
+                }
+            }
+            System.out.println("Derivativee 1 ="+derivative1);
+            System.out.println("Derivative 2 ="+derivative2);
     }
 }
