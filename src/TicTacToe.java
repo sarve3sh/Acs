@@ -16,8 +16,6 @@ public class TicTacToe {
         System.out.println("Please enter your move (in the order of row and colomn)seperated by a space (each player gets their turn alternatively starting with X)");
         Scanner keyboard = new Scanner(System.in);
         int x = keyboard.nextInt();
-        // I am gonna use methods for checking the winner and printing the board and
-        // also asking for input
         System.out.println("                                             |" + grid[0][0] + "|" + grid[0][1] + "|" + grid[0][2] + "|");
         System.out.println("                                             |" + grid[1][0] + "|" + grid[1][1] + "|" + grid[1][2] + "|");
         System.out.println("                                             |" + grid[2][0] + "|" + grid[2][1] + "|" + grid[2][2] + "|");
@@ -28,7 +26,7 @@ public class TicTacToe {
                 grid[row][col] = 0;
             }
         }
-
+        
     }  
     }   
 
