@@ -30,19 +30,24 @@ public class TicTacToe {
             System.out.println("\t\t" + grid[1][0] + " | " + grid[1][1] + " | " + grid[1][2] + "");
             System.out.println("\t\t" + grid[2][0] + " | " + grid[2][1] + " | " + grid[2][2] + ""); 
 
-            System.out.print("Please enter your move (in the order of row and colomn)seperated by a space ");
+            System.out.print("Please enter your move (in the order of row and column) separated by a space: ");
             row = keyboard.nextInt();
             col = keyboard.nextInt();
-            if (row >= 0 && row <3 && col >= 0 && col < 3) {
-                grid[row][col]='O';
-            
-            }else if (row ){
-                System.out.println("Invalid move");
-            }else{
-                System.out.println("Invalid move");
-            }
-            
-        }
+            if (row >= 0 && row < 3 && col >= 0 && col < 3) {
+                if (grid[row][col] == ' ') { 
+                    grid[row][col] = 'O'; 
+                    System.out.println("Invalid move");
+                     System.out.println("\t\t" + grid[0][0] + " | " + grid[0][1] + " | " + grid[0][2] + "");
+                     System.out.println("\t\t" + grid[1][0] + " | " + grid[1][1] + " | " + grid[1][2] + "");
+                     System.out.println("\t\t" + grid[2][0] + " | " + grid[2][1] + " | " + grid[2][2] + ""); 
+                } else {
+                    System.out.println("Invalid move. The cell is already occupied.");
+                }
 
-    }
+            } else {
+                System.out.println("Invalid move. Please enter a valid row and column.");
+            }
+    }}
+
+
 
