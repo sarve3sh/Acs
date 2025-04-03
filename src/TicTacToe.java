@@ -8,6 +8,7 @@ public class TicTacToe {
         System.out.println("2. You are X, the other person is O. Players take turns putting their marks in empty squares.");
         System.out.println("3. The first player to get 3 of their marks (x/o) in a row wins the game (the marks can be up, across, or even diagonal).");
         System.out.println("4. If the squares are filled and no player has a complete row of their mark, then the game ends in a tie.");
+        System.out.println("5. each moves are between 0 and 2, any other number will give you an invalid move. the first enter the row followed by the column");
         System.out.println("                ==================================================================");
 
         char[][] grid = new char[3][3];
