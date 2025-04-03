@@ -16,7 +16,7 @@ public class TicTacToe {
 
         Scanner keyboard = new Scanner(System.in);
         char currentplayer = 'X';
-
+        //while loop to keep the game running until a player wins or the board is full
         while (true) {
             System.out.println(
                     "Please enter your move (in the order of row and column) separated by a space (each player gets their turn alternatively starting with X)");
@@ -52,7 +52,7 @@ public class TicTacToe {
 
         keyboard.close(); // Close scanner
     }
-
+    // method to initialize the board
     public static void initializeBoard(char[][] grid) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -60,13 +60,13 @@ public class TicTacToe {
             }
         }
     }
-
+    //method to print the grid/board
     public static void printBoard(char[][] grid) {
         System.out.println("\t\t" + grid[0][0] + " | " + grid[0][1] + " | " + grid[0][2]); // \t adds space
-        System.out.println("\t\t" + grid[1][0] + " | " + grid[1][1] + " | " + grid[1][2]); // shows starting grid
+        System.out.println("\t\t" + grid[1][0] + " | " + grid[1][1] + " | " + grid[1][2]); 
         System.out.println("\t\t" + grid[2][0] + " | " + grid[2][1] + " | " + grid[2][2]);
     }
-
+    // method to check if a player has won
     public static boolean checkWinner(char[][] grid, char currentPlayer) {
         for (int i = 0; i < 3; i++) {
             if ((grid[i][0] == currentPlayer && grid[i][1] == currentPlayer && grid[i][2] == currentPlayer) ||
@@ -77,7 +77,7 @@ public class TicTacToe {
         return (grid[0][0] == currentPlayer && grid[1][1] == currentPlayer && grid[2][2] == currentPlayer) ||
                (grid[0][2] == currentPlayer && grid[1][1] == currentPlayer && grid[2][0] == currentPlayer);
     }
-
+    //checks for tie
     public static boolean isBoardfull(char[][] grid) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
