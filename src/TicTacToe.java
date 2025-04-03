@@ -12,42 +12,87 @@ public class TicTacToe {
         System.out.println(
                 "4. If the squares are filled and no player has a complete row of their mark then the game ends in a tie.");
         System.out.println("                ==================================================================");
+        // initialize the board
         char[][] grid = new char[3][3];
-        System.out.println("\t\t" + grid[0][0] + " | " + grid[0][1] + " | " + grid[0][2] + ""); // \t adds space
-        System.out.println("\t\t" + grid[1][0] + " | " + grid[1][1] + " | " + grid[1][2] + "");
-        System.out.println("\t\t" + grid[2][0] + " | " + grid[2][1] + " | " + grid[2][2] + "");
-        System.out.println(
-                "Please enter your move (in the order of row and colomn)seperated by a space (each player gets their turn alternatively starting with X)");
+        initializeBoard(grid);
+        printBoard(grid);
+        
         Scanner keyboard = new Scanner(System.in);
-        int row = keyboard.nextInt();
-        int col = keyboard.nextInt();
-        if (row >= 0 && row <3 && col >= 0 && col < 3) {
-            grid[row][col]='X';
-        }else{
-                System.out.println("Invalid move");
-        }
-            System.out.println("\t\t" + grid[0][0] + " | " + grid[0][1] + " | " + grid[0][2] + "");
-            System.out.println("\t\t" + grid[1][0] + " | " + grid[1][1] + " | " + grid[1][2] + "");
-            System.out.println("\t\t" + grid[2][0] + " | " + grid[2][1] + " | " + grid[2][2] + ""); 
+        char currentplayer = 'X';
+        System.out.println("\t\t" + grid[0][0] + " | " + grid[0][1] + " | " + grid[0][2] + ""); // \t adds space
+        System.out.println("\t\t" + grid[1][0] + " | " + grid[1][1] + " | " + grid[1][2] + ""); // shows starting grid
+        System.out.println("\t\t" + grid[2][0] + " | " + grid[2][1] + " | " + grid[2][2] + "");
 
-            System.out.print("Please enter your move (in the order of row and column) separated by a space: ");
-            row = keyboard.nextInt();
-            col = keyboard.nextInt();
+        while (true) {
+            System.out.println(
+                    "Please enter your move (in the order of row and column) separated by a space (each player gets their turn alternatively starting with X)");
+            int row = keyboard.nextInt();
+            int col = keyboard.nextInt();
+
+            // Check if the move is valid
             if (row >= 0 && row < 3 && col >= 0 && col < 3) {
-                if (grid[row][col] == ' ') { 
-                    grid[row][col] = 'O'; 
-                    System.out.println("Invalid move");
-                     System.out.println("\t\t" + grid[0][0] + " | " + grid[0][1] + " | " + grid[0][2] + "");
-                     System.out.println("\t\t" + grid[1][0] + " | " + grid[1][1] + " | " + grid[1][2] + "");
-                     System.out.println("\t\t" + grid[2][0] + " | " + grid[2][1] + " | " + grid[2][2] + ""); 
+                if (grid[row][col] == '\0') { // Ensure the cell is empty
+                    grid[row][col] = currentplayer;
+
+                    if (checkWinner(grid, currentplayer)) {
+                        System.out.println("Player " + currentplayer + " wins!");
+                        break;
+                    }
+
+                    if (isBoardfull(grid)) {
+                        System.out.println("It's a tie!");
+                        break;
+                    }
+
+                    // Switch to the other player
+                    currentplayer = (currentplayer == 'X') ? 'O' : 'X';
                 } else {
-                    System.out.println("Invalid move. The cell is already occupied.");
+                    System.out.println("Cell is already occupied. Please try again.");
                 }
-
             } else {
-                System.out.println("Invalid move. Please enter a valid row and column.");
+                System.out.println("Invalid move. Please try again.");
             }
-    }}
+        }
+    }
 
+    public static void initializeBoard(char[][] grid) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                grid[i][j] = ' ';
+            }
+        }
+    }
 
+    public static void printBoard(char[][] grid) {
+        System.out.println("\t\t" + grid[0][0] + " | " + grid[0][1] + " | " + grid[0][2] + ""); // \t adds space
+        System.out.println("\t\t" + grid[1][0] + " | " + grid[1][1] + " | " + grid[1][2] + ""); // shows starting grid
+        System.out.println("\t\t" + grid[2][0] + " | " + grid[2][1] + " | " + grid[2][2] + "");
+    }
 
+    public static boolean checkWinner(char[][] grid, char currentPlayer) {
+        // Check rows and columns
+        for (int i = 0; i < 3; i++) {
+            if ((grid[i][0] == currentPlayer && grid[i][1] == currentPlayer && grid[i][2] == currentPlayer) ||
+                (grid[0][i] == currentPlayer && grid[1][i] == currentPlayer && grid[2][i] == currentPlayer)) {
+                return true;
+            }
+        }
+        // Check diagonals
+        if ((grid[0][0] == currentPlayer && grid[1][1] == currentPlayer && grid[2][2] == currentPlayer) ||
+            (grid[0][2] == currentPlayer && grid[1][1] == currentPlayer && grid[2][0] == currentPlayer)) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isBoardfull(char[][] grid) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (grid[i][j] == ' ') {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+}
