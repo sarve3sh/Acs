@@ -7,7 +7,7 @@ public class Dictionary{
         public static void main(String[] args) {
             System.out.println("Please enter a sentence in English:");
             String sentence = keyboard.next();
-            HashSet<String>
+            new HashSet();
     
     }
 }
