@@ -11,7 +11,9 @@ public class Point {
     }
 
     public Point difference(Point point) {
-
+        this.x - getX();
+        this.y - getY();
+        return difference(point);
     }
 
     public void displayCoordinate() {
@@ -34,5 +36,14 @@ public class Point {
     }
     public Point midPoint(Point point){
         
+    }
+    public double slope(Point point){
+
+    }
+    public Point sum(Point point){
+
+    }
+    public double yintercept(Point point){
+
     }
 }
