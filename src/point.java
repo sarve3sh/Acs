@@ -28,7 +28,7 @@ public class Point {
         return x;
     }
 
-    public double getY() {
+    public double getY() { 
         return y;
     }
     public void linearEquation(Point point){
