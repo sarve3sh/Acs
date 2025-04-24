@@ -1,38 +1,46 @@
-public enum Garage { // Garage.java
+public enum Garage { 
 
-MERCEDES(1926,196.56), //they are in billions
+MERCEDES(2019,450,"Lewis Hamilton","W11"), // 4 constants are: Best performing year
+                                                                    // amount spent in millions
+MCLAREN(1988,300,"Ayrton Senna","MP4/4"),  // Best driver
+                                                                    // Best car
+ASTONMARTIN(2021,150,"Sebastian Vettel","AMR23"),
 
-MCLAREN(1963,2.03),
+ALPINE(2005,150,"Fernando Alonso","R25"),
 
-FORD(1903,249.75),
+ALFAROMEO(1994,150,"Kimi Räikkönen","C24"),
 
-TOYOTA(1937,420.12),
+ALPHATAURI(2008,100,"Sebastian Vettel","STR3"),
 
-HYUNDAI(1967,164.84),
+FERRARI(2004,500,"Michael Schumacher","F2004"),
 
-JAGUAR(1922,49.28),
+REDBULL(2023,300,"Sebastian Vettel","RB19"),
 
-FERRARI(1939,9.02),
+HAAS(2018,100,"Romain Grosjean","VF-18"),
 
-MGMOTOR(1924,3.38),
-
-LADA(1966,4.05),
-
-BUGATTI(1909,0.68);
+WILLIAMS(1992,130,"Nigel Mansel","FW14B");
 
 private  double year;
-private double revenue;
+private double spending;
+private String driver;
+private String car;
 
-Garage(double year, double revenue){
+Garage(double year, double spending, String driver, String car ){
     this.year = year;
-    this.revenue = revenue;
-    
+    this.spending = spending;
+    this.driver = driver;
+    this.car = car;
 }
 public double getYear(){
     return year;
 }
-public double getRevenue(){
-    return revenue;
+public double getSpending(){
+    return spending;
 }
-
+public String getDriver(){
+    return driver;
+}
+public String getCar(){
+    return car;
+}
 }
