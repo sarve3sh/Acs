@@ -1,9 +1,9 @@
 public enum Garage { 
 
 MERCEDES(2019,450,"Lewis Hamilton","W11"), // 4 constants are: Best performing year
-                                                                    // amount spent in millions
+                                           // amount spent in millions
 MCLAREN(1988,300,"Ayrton Senna","MP4/4"),  // Best driver
-                                                                    // Best car
+                                           // Best car
 ASTONMARTIN(2021,150,"Sebastian Vettel","AMR23"),
 
 ALPINE(2005,150,"Fernando Alonso","R25"),
@@ -20,7 +20,7 @@ HAAS(2018,100,"Romain Grosjean","VF-18"),
 
 WILLIAMS(1992,130,"Nigel Mansel","FW14B");
 
-private  double year;
+private double year;
 private double spending;
 private String driver;
 private String car;
