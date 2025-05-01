@@ -1,3 +1,4 @@
+
     /**
      * Main parent class (tv)
      *@author Sarveshwaran Rajaraman
@@ -22,7 +23,7 @@ public class Tv {
         this.Model = Model;
         this.Size = Size;
         this.Year = Year;
-
+        
     }
     /**
      * turns on tv 
@@ -74,3 +75,4 @@ public class Tv {
     }
 
 }
+

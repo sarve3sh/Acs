@@ -1,3 +1,4 @@
+
 public class GarageTest {
     public static void main(String[] args) {
         for (Garage team : Garage.values()) {
